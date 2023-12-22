@@ -1,0 +1,35 @@
+// themes/_spotify-theme.scss
+
+// Colors
+$spotify-green: #1DB954;
+$spotify-black: #191414;
+$spotify-white: #FFFFFF;
+$spotify-gray: #B3B3B3;
+$spotify-light-gray: #E5E5E5;
+
+// Typography
+$spotify-font: 'Circular', 'Helvetica', sans-serif;
+$spotify-font-size: 16px;
+$spotify-font-weight-bold: 700;
+$spotify-font-weight-regular: 400;
+
+// Spacing
+$spotify-padding-small: 5px;
+$spotify-padding-medium: 10px;
+$spotify-padding-large: 20px;
+$spotify-margin: 15px;
+
+// Borders
+$spotify-border-radius: 5px;
+$spotify-border: 1px solid $spotify-gray;
+
+// Other Elements
+$spotify-icon-size: 24px;
+$spotify-button-height: 40px;
+
+// Z-index
+$spotify-z-index-modal: 100;
+$spotify-z-index-dropdown: 50;
+
+// Shadows
+$spotify-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);

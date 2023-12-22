@@ -1,27 +1,47 @@
 import { Grid } from '@mui/material'
-import React from 'react'
+import React,{useEffect} from 'react'
+import '../assets/scss/pages/_spotify-home-page.scss'
 import Sidebar from './Sidebar'
-import Navbar from './Navbar'
 import Body from './Body'
 import Footer from './Footer'
-
+import axios from 'axios'
+import { useStateProvider } from '../utils/StateProvider'
+import { reducerCases } from '../utils/Constants'
 function Spotify() {
-    return (
-        <Grid>
-            <Grid className='spotify__body'>
-                <Sidebar />
-                <Grid className='body'>
-                    <Navbar />
-                    <Grid className='body__contents'>
-                        <Body />
-                    </Grid>
-                </Grid>
-            </Grid>
+    const[{token},dispatch] = useStateProvider();
 
-            <Grid className='spotify__footer'>
-                <Footer />
-            </Grid>
+    useEffect(()=>{
+const getUserInfo = async()=>{
+    const {data} = await axios.get("https://api.spotify.com/v1/me",{
+        headers:{
+            Authorization:"Bearer "+token,
+            "Content-Type":"application/json",
+
+        }
+    })
+    const userInfo = {
+        userId: data.id,
+        userName:data.display_name
+    }
+    dispatch({type:reducerCases.SET_USER,userInfo})
+    
+}
+
+getUserInfo();
+    },[dispatch,token])
+    return (
+        <Grid container className='flexCen' style={{height:"99vh"}}>
+<Grid container className='flexCol' style={{ width:"99vw",height:"90%"}}>
+<Sidebar/>
+
+<Body />
+<Grid>
+ 
+</Grid>
+</Grid>
+<Footer />
         </Grid>
+   
     )
 }
 

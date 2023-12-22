@@ -1,0 +1,56 @@
+@import '../theme/default-theme';
+
+body{
+    background-color: #000000;
+}
+ar-thumb {
+    background-color:rgba(34, 34, 94, 0.664);
+}
+.gridContainer {
+    background-color: white;
+    border: 2px solid red;
+    padding: 10px; /* Adjust padding as needed */
+    margin-bottom: 10px; /* Adjust margin between grids */
+  }
+
+  .flexCen{
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+.flexCol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.flexRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.gray{
+    color:$spotify-gray;
+
+}
+.white{
+    color:$spotify-white;
+}
+.grayHove{
+    transition: 0.35s ease-in-out;
+    &:hover{
+        color:rgb(255, 255, 255);
+    }
+    cursor: pointer;
+}
+
+.scroll {
+    // height: 300px; /* Set a specific height */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .scroll1 {
+    // height: 500px; /* Set a specific height */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
